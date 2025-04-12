@@ -1,0 +1,59 @@
+/* Custom styling for VideoDubber app */
+
+.feature-list {
+    padding-left: 1.5rem;
+}
+
+.feature-list li {
+    list-style-type: none;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.feature-list li i {
+    color: var(--bs-primary);
+}
+
+/* Improve card styling */
+.card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Status message styling */
+#statusMessage {
+    font-weight: 500;
+}
+
+/* Progress bar styling */
+.progress {
+    height: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* File input styling */
+.form-control[type="file"] {
+    padding: 0.375rem;
+}
+
+/* Make button icons consistent */
+.btn i {
+    width: 16px;
+    text-align: center;
+}
+
+/* Smooth transitions */
+.btn, .form-control, .form-select {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-md-6:first-child {
+        margin-bottom: 2rem;
+    }
+}
