@@ -9,10 +9,12 @@ dependencies = [
     "ffmpeg-python>=0.2.0",
     "flask>=3.1.0",
     "flask-sqlalchemy>=3.1.1",
+    "googletrans-py>=4.0.0",
     "googletrans>=4.0.2",
     "gtts>=2.5.4",
     "gunicorn>=23.0.0",
     "psycopg2-binary>=2.9.10",
     "speechrecognition>=3.14.2",
+    "sqlalchemy>=2.0.40",
     "werkzeug>=3.1.3",
 ]

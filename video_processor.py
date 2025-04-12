@@ -37,12 +37,38 @@ class VideoProcessor:
     
     def update_status(self, status, progress, message):
         """Update the status of the processing job"""
+        # Update in-memory cache
         self.processing_jobs[self.job_id].update({
             'status': status,
             'progress': progress,
             'message': message
         })
+        
+        # Log the status update
         logger.debug(f"Job {self.job_id}: {status} - {progress}% - {message}")
+        
+        # Update database if available (in app context)
+        try:
+            from flask import current_app
+            from models import db, TranslationJob
+            
+            if current_app:  # Check if we're in Flask app context
+                with current_app.app_context():
+                    job = TranslationJob.query.get(self.job_id)
+                    if job:
+                        job.status = status
+                        job.progress = progress
+                        job.message = message
+                        
+                        # If completed, record completion time
+                        if status == 'completed':
+                            from datetime import datetime
+                            job.completed_at = datetime.utcnow()
+                            
+                        db.session.commit()
+        except (ImportError, RuntimeError):
+            # Not in Flask context or db not available
+            pass
     
     def extract_audio(self):
         """Extract audio from video file"""

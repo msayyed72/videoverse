@@ -218,6 +218,49 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Table styling */
+.table {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-top: none;
+    background-color: rgba(33, 37, 41, 0.8);
+    color: var(--light-color);
+}
+
+.table td {
+    vertical-align: middle;
+    border-color: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.table .badge {
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    border-radius: 30px;
+}
+
+/* Recent jobs section */
+.check-status {
+    transition: all 0.3s ease;
+}
+
+.check-status:hover {
+    transform: rotate(180deg);
+}
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
     .col-md-6:first-child {
